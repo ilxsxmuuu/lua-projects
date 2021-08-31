@@ -1,0 +1,46 @@
+local Pos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+function Estourar()
+
+    local string_1 = ""..game.Players.LocalPlayer.Name.."";
+    local Target = game:GetService("ReplicatedStorage").RemoteEvents.BlowBombsServer;
+    Target:FireServer(string_1);
+
+end
+
+function PegarBomba()
+
+local string_1 = "PickingTools";
+local string_2 = "Bomb";
+local Target = game:GetService("ReplicatedStorage").RemoteEvents.Tools98777;
+Target:InvokeServer(string_1, string_2);
+
+end
+function Equipar()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/ilxsxmuuu/lua-projects/main/Pegar%20bomba', true))()
+end
+function Teleportar()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5, 18, 261)
+end
+
+PegarBomba()
+wait()
+Equipar()
+wait(0.5)
+Teleportar()
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Please";
+    Text = "Click in you person";
+})
+wait(4)
+Estourar()
+wait(0.5)
+local ts = game:GetService("TweenService")
+local ti = TweenInfo.new(0.3)
+
+ts:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, ti, {CFrame = CFrame.new(-8, 18, 276)}):Play()
+wait(0.5)
+fireclickdetector(game:GetService("Workspace").WorkspaceCom["001_Bank"].FakeBankVaultMoneyBag.DuffleBagMoneyButton.ClickDetector, 1)
+wait(0.5)
+ts:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, ti , {CFrame = CFrame.new(-5, 18, 261)})
+wait(0.6)
+ts:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, ti , {CFrame = Pos})
