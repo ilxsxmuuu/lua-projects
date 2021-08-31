@@ -27,7 +27,7 @@ wait()
 Equipar()
 wait(0.5)
 Teleportar()
-game.StarterGui:SetCore("SendNotification", `{
+game.StarterGui:SetCore("SendNotification", {
     Title = "Please";
     Text = "Click in you person";
 })
