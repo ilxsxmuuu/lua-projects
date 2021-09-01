@@ -1,0 +1,137 @@
+local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/AikaV3rm/UiLib/master/Lib.lua')))()
+
+local w = library:CreateWindow("Da hood")
+
+local b = w:CreateFolder("Auto buy")
+
+local c = w:CreateFolder("Credits")
+
+
+
+getgenv().AutoBuyAmmoRevolver = false
+
+getgenv().AutoBuyAmmoFlame = false
+
+getgenv().AutoBuyAmmoDouble = false
+
+getgenv().AutoBuyAmmoAk = false
+
+b:Button("Revolver",function()
+    local plr = game.Players.LocalPlayer.Character.HumanoidRootPart
+    local pos = plr.CFrame
+
+    plr.CFrame = game:GetService("Workspace").Ignored.Shop["[Revolver] - $1300"].Head.CFrame
+    wait(0.3)
+    fireclickdetector(game:GetService("Workspace").Ignored.Shop["[Revolver] - $1300"].ClickDetector)
+    wait(0.6)
+    plr.CFrame = pos
+end)
+
+
+b:Toggle("Revolver Ammo",function(bool)
+    getgenv().AutoBuyAmmoRevolver = bool
+    if bool == true then
+        spawn(function()
+            while getgenv().AutoBuyAmmoRevolver == true do wait()
+                local plr = game.Players.LocalPlayer.Character.HumanoidRootPart
+                local pos = plr.CFrame
+
+                plr.CFrame = game:GetService("Workspace").Ignored.Shop["12 [Revolver Ammo] - $75"].Head.CFrame
+                wait(0.3)
+                fireclickdetector(game:GetService("Workspace").Ignored.Shop["12 [Revolver Ammo] - $75"].ClickDetector)
+            end
+        end)
+    end
+end)
+
+b:Button("Doublebarrel",function()
+    local plr = game.Players.LocalPlayer.Character.HumanoidRootPart
+    local pos = plr.CFrame
+
+    plr.CFrame = game:GetService("Workspace").Ignored.Shop["[Double-Barrel SG] - $1400"].Head.CFrame
+    wait(0.3)
+    fireclickdetector(game:GetService("Workspace").Ignored.Shop["[Double-Barrel SG] - $1400"].ClickDetector)
+    wait(0.6)
+    plr.CFrame = pos
+end)
+
+
+b:Toggle("Doublebarrel ammo",function(bool)
+    getgenv().AutoBuyAmmoDouble = bool
+    if bool == true then
+        spawn(function()
+            while getgenv().AutoBuyAmmoDouble == true do wait()
+                local plr = game.Players.LocalPlayer.Character.HumanoidRootPart
+                local pos = plr.CFrame
+
+                plr.CFrame = game:GetService("Workspace").Ignored.Shop["18 [Double-Barrel SG Ammo] - $60"].Head.CFrame
+                wait(0.3)
+                fireclickdetector(game:GetService("Workspace").Ignored.Shop["18 [Double-Barrel SG Ammo] - $60"].ClickDetector)
+            end
+        end)
+    end
+end)
+
+b:Button("Ak 47",function()
+    local plr = game.Players.LocalPlayer.Character.HumanoidRootPart
+    local pos = plr.CFrame
+
+    plr.CFrame = game:GetService("Workspace").Ignored.Shop["[AK47] - $2250"].Head.CFrame
+    wait(0.3)
+    fireclickdetector(game:GetService("Workspace").Ignored.Shop["[AK47] - $2250"].ClickDetector)
+    wait(0.6)
+    plr.CFrame = pos
+end)
+
+
+b:Toggle("Ak 47 ammo",function(bool)
+    getgenv().AutoBuyAmmoAk = bool
+    if bool == true then
+        spawn(function()
+            while getgenv().AutoBuyAmmoAk == true do wait()
+                local plr = game.Players.LocalPlayer.Character.HumanoidRootPart
+                local pos = plr.CFrame
+
+                plr.CFrame = game:GetService("Workspace").Ignored.Shop["[AK47] - $2250"].Head.CFrame
+                wait(0.3)
+                fireclickdetector(game:GetService("Workspace").Ignored.Shop["[AK47] - $2250"].ClickDetector)
+            end
+        end)
+    end
+end)
+
+b:Button("Flamethrower",function()
+    local plr = game.Players.LocalPlayer.Character.HumanoidRootPart
+local pos = plr.CFrame
+
+plr.CFrame = game:GetService("Workspace").Ignored.Shop["[Flamethrower] - $25000"].Head.CFrame
+wait(0.3)
+fireclickdetector(game:GetService("Workspace").Ignored.Shop["[Flamethrower] - $25000"].ClickDetector)
+wait(0.6)
+plr.CFrame = pos
+end)
+
+b:Toggle("Flamethrower armor",function(bool)
+    getgenv().AutoBuyAmmoFlame = bool
+    if bool == true then
+        spawn(function()
+            while getgenv().AutoBuyAmmoFlame == true do wait()
+                local plr = game.Players.LocalPlayer.Character.HumanoidRootPart
+                local pos = plr.CFrame
+
+                plr.CFrame = game:GetService("Workspace").Ignored.Shop["140 [Flamethrower Ammo] - $1550"].Head.CFrame
+                wait(0.3)
+                fireclickdetector(game:GetService("Workspace").Ignored.Shop["140 [Flamethrower Ammo] - $1550"].ClickDetector)
+            end
+        end)
+    end
+end)
+
+
+c:Button("Discord",function()
+    game.StarterGui:SetCore("SendNotification", {
+        Title = "Discord";
+        Text = "Sucess copy to clip board";
+    })
+    setclipboard("samu#9518")
+end)
