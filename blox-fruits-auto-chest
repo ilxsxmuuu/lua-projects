@@ -1,0 +1,62 @@
+local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/AikaV3rm/UiLib/master/Lib.lua')))()
+
+local w = library:CreateWindow("Blox fruits - script") -- Creates the window
+
+local b = w:CreateFolder("Auto chest") -- Creates the folder(U will put here your buttons,etc)
+
+local c = w:CreateFolder("Credits")
+
+getgenv().AutoBau1 = false
+
+getgenv().AutoBau2 = false
+
+getgenv().AutoBau3 = false
+
+c:Button("Feito pelo samu",function()
+    print("Elym Winning")
+end)
+
+b:Toggle("Bau level 1",function(bool)
+    getgenv().AutoBau1 = bool
+    if bool then
+        spawn(function()
+            while getgenv().AutoBau1 == true do 
+                local plr = game.Players.LocalPlayer.Character.HumanoidRootPart
+                local bau1 = game:GetService("Workspace").Chest1
+
+                plr.CFrame = bau1.CFrame
+                wait(0.3)
+            end
+        end)
+    end
+end)
+
+b:Toggle("Bau level 2",function(bool)
+    getgenv().AutoBau2 = bool
+    if bool then
+        spawn(function()
+            while getgenv().AutoBau2 == true do 
+                local plr = game.Players.LocalPlayer.Character.HumanoidRootPart
+                local bau2 = game:GetService("Workspace").Chest2
+
+                plr.CFrame = bau2.CFrame
+                wait(0.3)
+            end
+        end)
+    end
+end)
+
+b:Toggle("Bau level 3",function(bool)
+    getgenv().AutoBau3 = bool
+    if bool then
+        spawn(function()
+            while getgenv().AutoBau3 == true do 
+                local plr = game.Players.LocalPlayer.Character.HumanoidRootPart
+                local bau3 = game:GetService("Workspace").Chest3
+
+                plr.CFrame = bau3.CFrame
+                wait(0.3)
+            end
+        end)
+    end
+end)
