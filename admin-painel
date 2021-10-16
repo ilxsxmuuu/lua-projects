@@ -9,7 +9,7 @@ local Container = Instance.new("Frame")
 local UIGridLayout = Instance.new("UIGridLayout")
 
 Design.Name = "Design"
-Design.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Design.Parent = game.CoreGui
 Design.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Top.Name = "Top"
