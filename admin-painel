@@ -12058,3 +12058,32 @@ end)
 a:CriarBotao("Pular normal", function()
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
 end)
+a:CriarBotao("Fire Clickdetectors", function()
+for i,v in pairs(workspace:GetDescendants()) do
+if v:IsA("Clickdetector") then
+fireclickdetector(v)
+end
+end
+end)
+a:CriarBotao("Todas ferramentas(build)",function()
+    for i,v in pairs(game.ReplicatedStorage:GetDescendants()) do
+        if v:IsA('Tool') then
+            local w = v:Clone()
+            w.Parent = game.Players.LocalPlayer.Backpack
+        end
+    end
+    for i,v in pairs(game.Lighting:GetDescendants()) do
+        if v:IsA('Tool') then
+            local w = v:Clone()
+            w.Parent = game.Players.LocalPlayer.Backpack
+        end
+    end
+end)
+a:CriarBotao("Todas ferramentas",function()
+    for i,v in pairs(game:GetDescendants()) do
+        if v:IsA('Tool') then
+            local w = v:Clone()
+            w.Parent = game.Players.LocalPlayer.Backpack
+        end
+    end
+end)
