@@ -1,5 +1,5 @@
 local library = {}
-
+print("OI")
 function library:CriarJanela(name)
 
 local Design = Instance.new("ScreenGui")
