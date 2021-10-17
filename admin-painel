@@ -12015,41 +12015,54 @@ IntroBackground:Destroy()
 minimizeHolder()
 end)
 a:CriarBotao("Auto farm", function()
-    local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/AikaV3rm/UiLib/master/Lib.lua')))()
-
-local w = library:CreateWindow("Build a boat") -- Creates the window
-
-local b = w:CreateFolder("Auto farm") -- Creates the folder(U will put here your buttons,etc)
-
-getgenv().AutoFarm = false
-
-b:Button("Gravidade normal",function()
-    workspace.Gravity = 196.2
+   game.StarterGui:SetCore("SendNotification", {Title = "Aviso"; Text = "Sua tela congelara por 6 segundos, basta esperar"})
+wait(2)
+for i = 1,25000 do
+    print("Lag")
+end
+local args = { [1] = true } workspace.RefreshLocks:FireServer(unpack(args))
+noclip = false
+game:GetService('RunService').Stepped:connect(function()
+if noclip then
+game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+end
 end)
-
-b:Toggle("Auto farm",function(bool)
-    getgenv().AutoFarm = bool
-    if bool then
-        spawn(function()
-            while getgenv().AutoFarm == true do
-                workspace.Gravity = 0
-                local plr = game.Players.LocalPlayer.Character.HumanoidRootPart
-                local ts = game:GetService("TweenService")
-                plr.CFrame = CFrame.new(-52, 61, 1331)
-                wait(1)
-                game.StarterGui:SetCore("SendNotification", {
-                    Title = "Auto farm";
-                    Text = "Iniciado";
-                    Duration = 5;
-                })
-                ts:Create(plr, TweenInfo.new(20, Enum.EasingStyle.Linear), {CFrame = CFrame.new(-52, 61, 8341)}):Play()
-                wait(20)
-                plr.CFrame = CFrame.new(-52, -360, 9486)
-                wait(18)
-            end
-        end)
-    end
+noclip = not noclip
+game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+local Character = game:GetService('Players').LocalPlayer.Character
+wait(3)
+game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-69.0208588, 108.308792, 644.431091))
+wait(1)
+local CFrameEnd = CFrame.new(-41.7870445, 77.1494141, 8675.35059) -- Place your coords in here
+local Time = 20-- Time in seconds
+local tween =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Time, Enum.EasingStyle.Linear), {CFrame = CFrameEnd})
+tween:Play()
+tween.Completed:Wait(X) --- Completes, no need for additional wait time
+game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-63.2413521, -357.34967, 8819.09277)) wait(0.5)
+local CFrameEnd = CFrame.new(-55.8801956, -361.116333, 9488.1377) -- Place your coords in here
+local Time = 0 -- Time in seconds
+local tween =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Time), {CFrame = CFrameEnd})
+tween:Play()
+tween.Completed:Wait(X)
+game.Players.LocalPlayer.CharacterAdded:Connect(function()
+wait(3)
+game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-69.0208588, 108.308792, 644.431091))
+wait(1)
+local CFrameEnd = CFrame.new(-41.7870445, 77.1494141, 8675.35059) -- Place your coords in here
+local Time = 20-- Time in seconds
+local tween =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Time, Enum.EasingStyle.Linear), {CFrame = CFrameEnd})
+tween:Play()
+tween.Completed:Wait(X) --- Completes, no need for additional wait time
+game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-63.2413521, -357.34967, 8819.09277)) wait(0.5)
+local CFrameEnd = CFrame.new(-55.8801956, -361.116333, 9488.1377) -- Place your coords in here
+local Time = 0 -- Time in seconds
+local tween =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Time, Enum.EasingStyle.Linear), {CFrame = CFrameEnd})
+tween:Play()
+tween.Completed:Wait(X)
 end)
+for i=1, math.huge do
+wait(200)
+game.Players.LocalPlayer.Character.Head:Destroy() end
 end)
 
 
