@@ -12114,3 +12114,15 @@ a:CriarBotao("Todas ferramentas",function()
         end
     end
 end)
+a:CriarBotao("Destruir (Tool)", function()
+    local TpTool = Instance.new("Tool")
+    TpTool.Name = "Destruir"
+    TpTool.RequiresHandle = false
+    TpTool.Parent = game.Players.LocalPlayer.Backpack
+    TpTool.Activated:Connect(function()
+        mouse = game.Players.LocalPlayer:GetMouse()
+        game.StarterGui:SetCore("SendNotification", {Title = "Destruindo"; Text = ""..mouse.Target.Name.." !"})
+        wait(0.1)
+        mouse.Target:Destroy()
+    end)
+end)
