@@ -40,7 +40,21 @@ Container.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
 Container.BorderSizePixel = 0
 Container.Position = UDim2.new(0, 0, 1, 0)
 Container.Size = UDim2.new(0, 599, 0, 261)
+Container.ClipsDescendants = true
 
+local mouseh = game.Players.LocalPlayer:GetMouse()
+local debounce = false
+mouseh.KeyDown:Connect(function(key)
+    if key == "v" then
+        if debounce == false then
+            debounce = true
+            Container:TweenSize(UDim2.new(0, 599, 0, 0), "Out", "Quart", 0.3, true)
+        else
+            debounce = false
+            Container:TweenSize(UDim2.new(0, 599, 0, 261), "Out", "Quart", 0.3, true)
+        end
+    end
+end)
 UIGridLayout.Parent = Container
 UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
 UIGridLayout.CellSize = UDim2.new(0, 196, 0, 40)
