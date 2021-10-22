@@ -11,7 +11,7 @@ game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Died:Connect(functio
 				game.Players.LocalPlayer.Character:MoveTo(a)
 				wait()
 			end
-			print("Terminou")
+			loadstring(game:HttpGet('https://raw.githubusercontent.com/ilxsxmuuu/lua-projects/main/Auto-teleport'))()
 		end
 	end)
 end)
